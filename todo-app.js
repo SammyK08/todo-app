@@ -9,12 +9,12 @@ let filters={
     completed:false
 }
 
-document.querySelector('#search-text').addEventListener('input', function(e){
+document.querySelector('#search-text').addEventListener('input', (e)=>{
             filters.searchText= e.target.value
             renderTodos(todos,filters)
       })
 
- document.querySelector('#todo-form').addEventListener('submit',function(e){
+ document.querySelector('#todo-form').addEventListener('submit',(e)=>{
         e.preventDefault()
         let newItem={
           id:uuidv4(),
@@ -29,7 +29,7 @@ document.querySelector('#search-text').addEventListener('input', function(e){
         e.target.elements.newTodo.value=""
       })   
 
-    document.querySelector('#hide-completed').addEventListener('change',function(e){
+    document.querySelector('#hide-completed').addEventListener('change',(e)=>{
      filters.completed=e.target.checked
      renderTodos(todos,filters)
 
