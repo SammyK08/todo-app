@@ -2,12 +2,10 @@
 const getTodos=()=>{
 let todoJSON=localStorage.getItem('todo')
 
-
-if(todoJSON!=null){
-return JSON.parse(todoJSON)
-}
-else{
-    return[]
+try {
+    return todoJSON ? JSON.parse(todoJSON): []
+} catch (error) {
+   return [] 
 }
 }
 
